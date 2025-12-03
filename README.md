@@ -49,13 +49,6 @@ docker pull --platform linux/amd64 cleanstart/postgres:latest
 # ARM64
 docker pull --platform linux/arm64 cleanstart/postgres:latest
 ```
-
-## 📚 Resources
-
-- **CleanStart Website**: https://www.cleanstart.com
-- **Docker Hub**: https://hub.docker.com/r/cleanstart/postgres
-- **PostgreSQL Documentation**: https://www.postgresql.org/docs/
-
 ## 🔒 Best Practices
 
 - Use specific image tags for production (avoid `latest`)
@@ -63,7 +56,6 @@ docker pull --platform linux/arm64 cleanstart/postgres:latest
 - Enable read-only root filesystem when possible
 - Use environment variables for database configuration
 
-**
 ### 
 ### Resources
 
