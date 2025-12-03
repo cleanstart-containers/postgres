@@ -12,24 +12,33 @@ docker pull cleanstart/postgres:latest-dev
 
 ### Run Container
 ```bash
+
 # Start PostgreSQL server
+
 docker run --rm -it --name postgres-db cleanstart/postgres:latest
 
 # Interactive development
+
 docker run --rm -it --entrypoint /bin/sh cleanstart/postgres:latest-dev
 ```
 
 ### Sample Project
 ```bash
+
 # Navigate to sample project
+
 cd sample-project/
 
 # Run complete web application
+
 docker-compose up --build -d
 
 # Access web interface
+
 # http://localhost:5000
+
 # http://localhost:5000/users
+
 # http://localhost:5000/add_user
 ```
 
@@ -43,12 +52,16 @@ docker-compose up --build -d
 ## 🏗️ Architecture Support
 
 ```bash
+
 # AMD64
+
 docker pull --platform linux/amd64 cleanstart/postgres:latest
 
 # ARM64
+
 docker pull --platform linux/arm64 cleanstart/postgres:latest
 ```
+
 ## 🔒 Best Practices
 
 - Use specific image tags for production (avoid `latest`)
@@ -56,16 +69,15 @@ docker pull --platform linux/arm64 cleanstart/postgres:latest
 - Enable read-only root filesystem when possible
 - Use environment variables for database configuration
 
-### 
-### Resources
+###
 
-- Official Documentation: https://www.postgresql.org/docs/
-- View Provenance, Specifications, SBOM, Signature at: https://images.cleanstart.com/images/postgres
-- Docker Hub: https://hub.docker.com/r/cleanstart/postgres
-- CleanStart All Images: https://images.cleanstart.com
-- CleanStart All Community Images: https://hub.docker.com/u/cleanstart
+## Resources
 
----
+- **Official Documentation:** https://www.postgresql.org/docs/
+- **Provenance / SBOM / Signature:** https://images.cleanstart.com/images/postgres
+- **Docker Hub:** https://hub.docker.com/r/cleanstart/postgres
+- **CleanStart All Images:** https://images.cleanstart.com
+- **CleanStart Community Images:** https://hub.docker.com/u/cleanstart
 
 ### Vulnerability Disclaimer
 
