@@ -6,8 +6,8 @@ Official PostgreSQL database container image optimized for enterprise environmen
 
 ### Pull Images
 ```bash
-docker pull cleanstart/postgres:latest
-docker pull cleanstart/postgres:latest-dev
+docker pull ghcr.io/cleanstart-containers/postgres:latest
+docker pull ghcr.io/cleanstart-containers/postgres:latest-dev
 ```
 
 ### Run Container
@@ -15,11 +15,11 @@ docker pull cleanstart/postgres:latest-dev
 
 # Start PostgreSQL server
 
-docker run --rm -it --name postgres-db cleanstart/postgres:latest
+docker run --rm -it --name postgres-db ghcr.io/cleanstart-containers/postgres:latest
 
 # Interactive development
 
-docker run --rm -it --entrypoint /bin/sh cleanstart/postgres:latest-dev
+docker run --rm -it --entrypoint /bin/sh ghcr.io/cleanstart-containers/postgres:latest-dev
 ```
 
 ### Sample Project
@@ -55,11 +55,11 @@ docker-compose up --build -d
 
 # AMD64
 
-docker pull --platform linux/amd64 cleanstart/postgres:latest
+docker pull --platform linux/amd64 ghcr.io/cleanstart-containers/postgres:latest
 
 # ARM64
 
-docker pull --platform linux/arm64 cleanstart/postgres:latest
+docker pull --platform linux/arm64 ghcr.io/cleanstart-containers/postgres:latest
 ```
 
 ## 🔒 Best Practices
