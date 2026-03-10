@@ -64,11 +64,10 @@ Launch a temporary PostgreSQL client pod to connect to your database:
 
 ```bash
 kubectl run -it --rm pg-client \
-  --image=postgres:17 \
+  --image=cleanstart/postgres:latest \
   -n postgres-sample \
   --restart=Never \
-  --env="PGPASSWORD=postgres_pass" -- \
-  psql -h postgres-service -U postgres
+  --env="POSTGRES_PASSWORD=POSTGRES_PASSWORD"
 ```
 
 📝 4. Run CRUD Operations
