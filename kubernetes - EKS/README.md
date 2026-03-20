@@ -81,11 +81,10 @@ Press `Ctrl+C` when running.
 
 ```bash
 kubectl run -it --rm pg-client \
-  --image=postgres:17 \
+  --image=cleanstart/postgres:latest \
   -n postgres-sample \
   --restart=Never \
-  --env="PGPASSWORD=postgres_pass" -- \
-  psql -h postgres-service -U postgres
+  --env="POSTGRES_PASSWORD=POSTGRES_PASSWORD"
 ```
 
 ### Step 4: Test Database
@@ -264,11 +263,11 @@ kubectl get pods -n postgres-sample
 ```bash
 # Connect and create data
 kubectl run -it --rm pg-client \
-  --image=postgres:17 \
+  --image=cleanstart/postgres:latest \
   -n postgres-sample \
   --restart=Never \
-  --env="PGPASSWORD=postgres_pass" -- \
-  psql -h postgres-service -U postgres -c "CREATE DATABASE testdb;"
+  --env="POSTGRES_PASSWORD=POSTGRES_PASSWORD" \
+  -- psql -h postgres-service -U postgres -c "CREATE DATABASE testdb;"
 
 # Restart the pod
 kubectl rollout restart deployment postgres-deployment -n postgres-sample
@@ -278,11 +277,11 @@ kubectl get pods -n postgres-sample -w
 
 # Verify data still exists
 kubectl run -it --rm pg-client \
-  --image=postgres:17 \
+  --image=cleanstart/postgres:latest \
   -n postgres-sample \
   --restart=Never \
-  --env="PGPASSWORD=postgres_pass" -- \
-  psql -h postgres-service -U postgres -c "\l" | grep testdb
+  --env="POSTGRES_PASSWORD=POSTGRES_PASSWORD" \
+  -- psql -h postgres-service -U postgres -c "\l" | grep testdb
 ```
 
 If you see `testdb` in the list, persistence is working! ✅
